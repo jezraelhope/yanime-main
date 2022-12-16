@@ -129,7 +129,8 @@ table {
 /* variables */
 
 :root {
-  --spacing-xl: 4rem;
+  --spacing-xxl: 7rem;
+  --spacing-xl: 5rem;
   --spacing-lg: 3rem;
   --spacing-md: 2rem;
   --spacing-small: 1rem;
@@ -139,8 +140,10 @@ table {
   --font-size-md: 2rem;
   --font-size-small: 1.5rem;
   --font-size-xsmall: 1rem;
-  --base-color1: #382953; //dark purple
-  --base-color2: #382953; // light purple
-  --base-color3: #ffd1ff; //pink
+  --base-color1: #382953;
+  --base-color2: #805af4;
+  --base-color3: #ffd1ff;
   --base-color4: #ffffff;
+  --font-family1: "Zen Dots", cursive;
+  --font-family2: "Montserrat Alternates", cursive;
 }
