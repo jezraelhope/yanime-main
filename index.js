@@ -21,7 +21,7 @@ const temporaryGenre = [
 //generate 4 random genre
 const getRandom4Nums = [];
 while (getRandom4Nums.length < 4) {
-  var r = Math.floor(Math.random() * temporaryGenre.length) + 0;
+  let r = Math.floor(Math.random() * temporaryGenre.length) + 0;
   if (getRandom4Nums.indexOf(r) === -1) getRandom4Nums.push(r);
 }
 const random4Genre = getRandom4Nums.map((num) => {
@@ -38,4 +38,4 @@ const genreComponent = random4Genre.map((genre) => {
     </>`;
 });
 
-contentContainer.innerHTML = genreComponent;
+contentContainer.innerHTML = genreComponent.join("");

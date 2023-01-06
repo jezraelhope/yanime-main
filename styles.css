@@ -2,11 +2,13 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  font-family: var(--font-family2);
+  color: var(--base-color1);
 }
 
 header {
   width: 100%;
-  padding: 1rem;
+  padding: 2rem 3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -27,8 +29,10 @@ header a {
     brightness(104%) contrast(106%) drop-shadow(3px 5px 2px var(--base-color1));
 }
 
+/* hero section */
+
 .hero {
-  background: url("https://img.freepik.com/free-vector/japanese-street-pastel-colours_52683-44714.jpg?w=1800&t=st=1671220459~exp=1671221059~hmac=a6e1927fef5a5c2a73f5fbe76043b8fa1a5e24e080af33307e2e94b348e964aa")
+  background: url("https://img.freepik.com/free-vector/japanese-street-pastel-colours_52683-44714.jpg?w=1800&t=st=1671238941~exp=1671239541~hmac=f440cac647c7f3dcb8fad509ff82627fff4ae25afb162780eb727a25b90f482a")
     center center no-repeat;
   background-size: cover;
   height: 100vh;
@@ -40,26 +44,21 @@ header a {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  margin: 0 auto;
-}
-
-.hero-child {
-  width: 50%;
-}
-
-.heading {
-  background-color: rgb(128, 90, 244, 0.27);
-  border-radius: 30px;
+  margin: var(--spacing-lg) auto;
 }
 
 .heading h1 {
+  width: 60%;
   font-family: var(--font-family2);
   font-weight: 600;
   font-size: min(20vw, 80px);
   line-height: 1.2;
   color: #ffd1ff;
+  background-color: rgb(128, 90, 244, 0.27);
+  border-radius: 30px;
   text-shadow: 2px 2px 3px var(--base-color1);
   margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-small);
 }
 
 .heading a {
@@ -72,12 +71,37 @@ header a {
   text-decoration: none;
 }
 
-.slide-show img {
-  max-width: 300px;
+.slide-show {
+  width: 40%;
+  text-align: center;
+  margin-right: var(--spacing-small);
 }
 
+.slide-show img {
+  max-width: 400px;
+  max-height: 500px;
+  border: rgb(128, 90, 244, 0.8) 2px solid;
+}
 .slide-show h2 {
   font-family: var(--font-family2);
   font-weight: 600;
-  color: var(--base-color2);
+  color: var(--base-color3);
+  text-shadow: 2px 2px 3px var(--base-color1);
+  background-color: rgb(128, 90, 244, 0.8);
+  border-radius: 15px;
+  line-height: 1.5;
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-small);
+}
+
+/* top anime of different genre */
+
+#randomize {
+  background-color: var(--base-color2);
+}
+
+/* footer */
+
+footer {
+  background-color: var(--base-color4);
 }
