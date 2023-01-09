@@ -51,7 +51,7 @@ header a {
   width: 60%;
   font-family: var(--font-family2);
   font-weight: 600;
-  font-size: min(20vw, 80px);
+  font-size: min(15vw, 110px);
   line-height: 1.2;
   color: #ffd1ff;
   background-color: rgb(128, 90, 244, 0.27);
@@ -64,7 +64,8 @@ header a {
 .heading a {
   border: 2px solid #ffd1ff;
   border-radius: 30px;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.3rem;
+  font-size: min(2vw, 30px);
   background-color: var(--base-color2);
   color: #ffd1ff;
   text-shadow: 2px 2px 3px var(--base-color1);
@@ -85,6 +86,7 @@ header a {
 .slide-show h2 {
   font-family: var(--font-family2);
   font-weight: 600;
+  font-size: min(3vw, 20px);
   color: var(--base-color3);
   text-shadow: 2px 2px 3px var(--base-color1);
   background-color: rgb(128, 90, 244, 0.8);
