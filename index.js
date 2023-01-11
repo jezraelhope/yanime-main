@@ -1,17 +1,23 @@
 //get anime data
-let animeList = [];
 const fetchAnime = async () => {
-  const response = await fetch("https://yanime.onrender.com/anime/admin", {
-    method: "GET",
-    mode: "cors",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => data);
+  try {
+    const response = await fetch("https://yanime.onrender.com/anime/admin", {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    // Do something with the data here
+    console.log(data);
+    getAnimeData(data);
+  } catch (error) {
+    console.error(error);
+  }
 };
 fetchAnime();
+
 //get elements from html
 
 const contentContainer = document.getElementById("randomize");
@@ -46,11 +52,20 @@ const random4Genre = getRandom4Nums.map((num) => {
 
 //generate components based on genre
 
-const genreComponent = random4Genre.map((genre) => {
-  return `<div class = "${genre}">
-        <h3>Top Anime in ${genre}</h3>
-        <div class="anime-list-by-genre"></div> 
-    </>`;
-});
+const genreComponent = () => {
+  random4Genre.map((genre) => {
+    const genreContainer = document.createElement("div");
+    genreContainer.setAttribute("class", genre);
 
-contentContainer.innerHTML = genreComponent.join("");
+    const genreHeader = document.createElement("h3");
+    genreHeader.setAttribute("class", "genre-header");
+
+    const genreContents = document.createElement("div");
+    genreContents.setAttribute("class", "genre-contents");
+
+    genreContainer.appendChild(genreHeader, genreContents);
+    contentContainer.appendChild(genreContainer);
+  });
+};
+
+genreComponent();
