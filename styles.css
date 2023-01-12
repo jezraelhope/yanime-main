@@ -100,10 +100,74 @@ header a {
 
 #randomize {
   background-color: var(--base-color2);
+  padding: 2rem;
+}
+
+.genre-container {
+  max-width: 60%;
+  margin: 2rem auto;
+}
+
+.genre-header {
+  color: var(--base-color3);
+  font-size: var(--font-size-small);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.genre-contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.anime-container {
+  margin: 1rem;
+  text-align: center;
+}
+
+.anime-container img {
+  max-width: 20vw;
+  max-height: 30vh;
+}
+
+.anime-container h4 {
+  font-weight: bold;
+  color: var(--base-color3);
 }
 
 /* footer */
 
 footer {
   background-color: var(--base-color4);
+}
+
+.footer-contents {
+  max-width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.site-description {
+  width: 33%;
+  line-height: 1.7;
+}
+
+.site-description p {
+  width: 70%;
+}
+
+.quik-links {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.7;
+}
+
+.socials {
+  width: 33%;
 }
