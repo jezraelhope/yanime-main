@@ -122,18 +122,25 @@ header a {
 }
 
 .anime-container {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
   margin: 1rem;
+  padding: 1rem;
   text-align: center;
+  align-items: center;
 }
 
 .anime-container img {
-  max-width: 20vw;
+  max-width: 200px;
   max-height: 30vh;
 }
 
 .anime-container h4 {
   font-weight: bold;
-  color: var(--base-color3);
+  color: var(--base-color5);
+  width: 60%;
+  margin-top: 1rem;
 }
 
 /* footer */
@@ -170,4 +177,15 @@ footer {
 
 .socials {
   width: 33%;
+}
+
+.socials img {
+  width: 30px;
+  filter: invert(12%) sepia(20%) saturate(5404%) hue-rotate(247deg)
+    brightness(81%) contrast(118%);
+  margin: 0 0.5rem;
+}
+
+.ack {
+  margin-top: 1rem;
 }
