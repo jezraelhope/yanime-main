@@ -54,13 +54,12 @@ const random4Genre = getRandom4Nums.map((num) => {
 const genreComponent = (data) => {
   random4Genre.map((genreName) => {
     const genreContainer = document.createElement("div");
-    genreContainer.setAttribute("class", genreName);
+    genreContainer.setAttribute("class", `${genreName} genre-container`);
 
     const genreHeader = document.createElement("h3");
     genreHeader.setAttribute("class", "genre-header");
     const genreText = document.createTextNode(`Top Anime in ${genreName}`);
     genreHeader.appendChild(genreText);
-    console.log(genreHeader);
 
     const genreContents = document.createElement("div");
     genreContents.setAttribute("class", "genre-contents");
@@ -69,23 +68,24 @@ const genreComponent = (data) => {
     data.filter((anime) => {
       if (genreName.toLowerCase() === anime.genre) {
         const animeContainer = document.createElement("div");
+        animeContainer.setAttribute("class", "anime-container");
 
         const animeImage = document.createElement("img");
         animeImage.setAttribute("src", anime.image);
-        animeImage.setAttribute("alt", anime.description);
+        animeImage.setAttribute("alt", `${anime.title} image`);
 
         const animeTitleTag = document.createElement("h4");
-        const animeTitle = document.createTextNode(anime.animeTitle);
+        const animeTitle = document.createTextNode(anime.title);
         animeTitleTag.appendChild(animeTitle);
 
         animeContainer.appendChild(animeImage);
         animeContainer.appendChild(animeTitleTag);
         genreContents.appendChild(animeContainer);
-        console.log(anime);
       }
     });
 
     genreContainer.appendChild(genreHeader);
+    genreContainer.appendChild(genreContents);
     contentContainer.appendChild(genreContainer);
   });
 };
