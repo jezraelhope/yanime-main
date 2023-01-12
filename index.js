@@ -1,4 +1,5 @@
 //get anime data
+
 const fetchAnime = async () => {
   try {
     const response = await fetch("https://yanime.onrender.com/anime/admin", {
@@ -9,9 +10,7 @@ const fetchAnime = async () => {
       },
     });
     const data = await response.json();
-    // Do something with the data here
-    console.log(data);
-    getAnimeData(data);
+    genreComponent(data);
   } catch (error) {
     console.error(error);
   }
@@ -52,20 +51,41 @@ const random4Genre = getRandom4Nums.map((num) => {
 
 //generate components based on genre
 
-const genreComponent = () => {
-  random4Genre.map((genre) => {
+const genreComponent = (data) => {
+  random4Genre.map((genreName) => {
     const genreContainer = document.createElement("div");
-    genreContainer.setAttribute("class", genre);
+    genreContainer.setAttribute("class", genreName);
 
     const genreHeader = document.createElement("h3");
     genreHeader.setAttribute("class", "genre-header");
+    const genreText = document.createTextNode(`Top Anime in ${genreName}`);
+    genreHeader.appendChild(genreText);
+    console.log(genreHeader);
 
     const genreContents = document.createElement("div");
     genreContents.setAttribute("class", "genre-contents");
 
-    genreContainer.appendChild(genreHeader, genreContents);
+    //get animes per genre
+    data.filter((anime) => {
+      if (genreName.toLowerCase() === anime.genre) {
+        const animeContainer = document.createElement("div");
+
+        const animeImage = document.createElement("img");
+        animeImage.setAttribute("src", anime.image);
+        animeImage.setAttribute("alt", anime.description);
+
+        const animeTitleTag = document.createElement("h4");
+        const animeTitle = document.createTextNode(anime.animeTitle);
+        animeTitleTag.appendChild(animeTitle);
+
+        animeContainer.appendChild(animeImage);
+        animeContainer.appendChild(animeTitleTag);
+        genreContents.appendChild(animeContainer);
+        console.log(anime);
+      }
+    });
+
+    genreContainer.appendChild(genreHeader);
     contentContainer.appendChild(genreContainer);
   });
 };
-
-genreComponent();
