@@ -128,22 +128,24 @@ header a {
 .genre-contents {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  overflow: auto;
 }
 
 .anime-container {
-  width: 33%;
   display: flex;
   flex-direction: column;
-  margin: 1rem;
-  padding: 1rem;
+  margin: 0.5rem;
   text-align: center;
   align-items: center;
 }
 
-.anime-container img {
-  max-width: 200px;
-  max-height: 30vh;
+.image-container {
+  max-width: 125px;
+  max-height: 200px;
+}
+
+.image-container img {
+  height: 100%;
 }
 
 .anime-container h4 {
@@ -151,6 +153,7 @@ header a {
   color: var(--base-color5);
   width: 60%;
   margin-top: 1rem;
+  font-size: min(4vw, 12px);
 }
 
 /* footer */
@@ -162,7 +165,7 @@ footer {
 .footer-contents {
   max-width: 70%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -170,27 +173,24 @@ footer {
 }
 
 .site-description {
-  width: 33%;
   line-height: 1.7;
 }
 
 .site-description p {
-  width: 70%;
+  font-size: min(3vw, 12px);
+  margin-bottom: var(--spacing-md);
 }
 
 .quik-links {
-  width: 33%;
   display: flex;
   flex-direction: column;
   line-height: 1.7;
-}
-
-.socials {
-  width: 33%;
+  font-size: min(3vw, 12px);
+  margin-bottom: var(--spacing-md);
 }
 
 .socials img {
-  width: 30px;
+  max-width: 7vw;
   filter: invert(12%) sepia(20%) saturate(5404%) hue-rotate(247deg)
     brightness(81%) contrast(118%);
   margin: 0 0.5rem;
@@ -198,6 +198,7 @@ footer {
 
 .ack {
   margin-top: 1rem;
+  font-size: min(3vw, 12px);
 }
 
 /* Desktop media queries */
@@ -263,65 +264,19 @@ footer {
     padding: 2rem;
   }
 
-  .genre-container {
-    max-width: 60%;
-    margin: 2rem auto;
-  }
-
   .genre-header {
     color: var(--base-color3);
-    font-size: var(--font-size-small);
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-
-  .genre-contents {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .anime-container {
-    width: 33%;
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    padding: 1rem;
-    text-align: center;
-    align-items: center;
-  }
-
-  .anime-container img {
-    max-width: 200px;
-    max-height: 30vh;
-  }
-
-  .anime-container h4 {
-    font-weight: bold;
-    color: var(--base-color5);
-    width: 60%;
-    margin-top: 1rem;
   }
 
   /* footer */
 
-  footer {
-    background-color: var(--base-color4);
-  }
-
   .footer-contents {
-    max-width: 70%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 3rem auto;
   }
 
   .site-description {
     width: 33%;
-    line-height: 1.7;
   }
 
   .site-description p {
@@ -330,9 +285,6 @@ footer {
 
   .quik-links {
     width: 33%;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.7;
   }
 
   .socials {
@@ -341,12 +293,5 @@ footer {
 
   .socials img {
     width: 30px;
-    filter: invert(12%) sepia(20%) saturate(5404%) hue-rotate(247deg)
-      brightness(81%) contrast(118%);
-    margin: 0 0.5rem;
-  }
-
-  .ack {
-    margin-top: 1rem;
   }
 }
