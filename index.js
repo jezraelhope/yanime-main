@@ -70,8 +70,12 @@ const genreComponent = (data) => {
         const animeContainer = document.createElement("div");
         animeContainer.setAttribute("class", "anime-container");
 
-        const imageContainer = document.createElement("div");
+        const imageContainer = document.createElement("a");
         imageContainer.setAttribute("class", "image-container");
+        imageContainer.setAttribute(
+          "href",
+          `https://yanime.onrender.com/anime/${anime._id}`
+        );
 
         const animeImage = document.createElement("img");
         animeImage.setAttribute("src", anime.image);
