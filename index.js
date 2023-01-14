@@ -70,15 +70,20 @@ const genreComponent = (data) => {
         const animeContainer = document.createElement("div");
         animeContainer.setAttribute("class", "anime-container");
 
+        const imageContainer = document.createElement("div");
+        imageContainer.setAttribute("class", "image-container");
+
         const animeImage = document.createElement("img");
         animeImage.setAttribute("src", anime.image);
         animeImage.setAttribute("alt", `${anime.title} image`);
+
+        imageContainer.appendChild(animeImage);
 
         const animeTitleTag = document.createElement("h4");
         const animeTitle = document.createTextNode(anime.title);
         animeTitleTag.appendChild(animeTitle);
 
-        animeContainer.appendChild(animeImage);
+        animeContainer.appendChild(imageContainer);
         animeContainer.appendChild(animeTitleTag);
         genreContents.appendChild(animeContainer);
       }
