@@ -114,6 +114,18 @@ header a {
   padding: var(--spacing-xsmall);
 }
 
+.loading-container {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-icon {
+  margin: 0 auto;
+}
+
 .genre-container {
   margin-top: var(--spacing-small);
 }

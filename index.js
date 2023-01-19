@@ -10,7 +10,11 @@ const fetchAnime = async () => {
       },
     });
     const data = await response.json();
-    genreComponent(data);
+    if (data) {
+      console.log(loadingContainer, "loading");
+      contentContainer.removeChild(loadingContainer);
+      genreComponent(data);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -20,6 +24,7 @@ fetchAnime();
 //get elements from html
 
 const contentContainer = document.getElementById("randomize");
+const loadingContainer = document.querySelector(".loading-container");
 
 //fetch genre list
 
