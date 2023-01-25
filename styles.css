@@ -25,6 +25,12 @@ header a {
   text-shadow: 2px 2px 3px var(--base-color1);
 }
 
+.menu-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .menu-icon {
   filter: invert(97%) sepia(45%) saturate(4491%) hue-rotate(198deg)
     brightness(104%) contrast(106%) drop-shadow(3px 5px 2px var(--base-color1));
